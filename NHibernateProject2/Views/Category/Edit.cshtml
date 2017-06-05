@@ -1,0 +1,28 @@
+﻿@using NHibernateProject2.Models
+@model Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>编辑</title>
+</head>
+<body>
+     @using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+     {
+         @Html.HiddenFor(m=>m.Id)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description)
+         @Html.ValidationSummary()
+         <input type="submit" value="确定" />
+     }
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@using NHibernateProject2.Models;
+@model Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+   @using (Html.BeginForm("Create", "Category", FormMethod.Post))
+   {
+    <span>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)       
+    </span><br />
+    <span>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description)
+    </span>
+    @Html.ValidationSummary()
+      <input type="submit" value="确定" />
+   }
+</body>
+</html>
